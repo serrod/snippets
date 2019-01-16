@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" >
+<head>
+<!-- Latest compiled and minified JavaScript -->
+	<script src="https://intranet.ent.southcom.mil/sites/j3-integratedops/Style%20Library/Custom%20Libraries/jquery-1.12.2/jquery.min.js"></script>
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://intranet.ent.southcom.mil/sites/j3-integratedops/Style%20Library/Custom Libraries/bootstrap-3.3.7-dist/css/bootstrap.css">		
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://intranet.ent.southcom.mil/sites/j3-integratedops/Style%20Library/Custom Libraries/bootstrap-3.3.7-dist/css/bootstrap-theme.css">
+		
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://intranet.ent.southcom.mil/sites/j3-integratedops/Style%20Library/Custom Libraries/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+  
+  <!-- CUSTOM: css -->
+  <link rel="Stylesheet" href="https://intranet.ent.southcom.mil/sites/j3-integratedops/b2c2wg/B2C2%20Support/B2C2WG-Custom-Style.css" />
+
+    <title>BootStrap TabMenu V.1</title>
+    <script language=javascript>
+        //functions to fetch items from list and append to tab menu
+        $.ajax({
+            url: "https://intranet.ent.southcom.mil/sites/j3-integratedops/b2c2wg/_vti_bin/listdata.svc/B2C2WGnav/",
+            type: "GET",
+            headers: { "Accept": "application/json; odata=verbose" },
+            success: function (data) {
+                $.each(data.d.results, function (index, item) {
+                    if (item.B2C2WGStatusValue == 'Active' && item.B2C2WGTypeValue == 'Boards') {
+                        $("#boards-sub-menu ul").append('<li><a href="' + item.SiteLink + '" target="_blank"><span class="tab">' + item.Title + '</span></a></li>');
+                    }
+                    if (item.B2C2WGStatusValue == 'Active' && item.B2C2WGTypeValue == 'Centers') {
+                            $("#center-sub-menu ul").append('<li><a href="' + item.SiteLink + '" target="_blank"><span class="tab">' + item.Title + '</span></a></li>');
+                    }
+                    if (item.B2C2WGStatusValue == 'Active' && item.B2C2WGTypeValue == 'Cells') {
+                        $("#cells-sub-menu ul").append('<li><a href="' + item.SiteLink + '" target="_blank"><span class="tab">' + item.Title + '</span></a></li>');
+                    }
+                    if (item.B2C2WGStatusValue == 'Active' && item.B2C2WGTypeValue == 'Working Groups') {
+                        $("#wg-sub-menu ul").append('<li><a href="' + item.SiteLink + '" target="_blank"><span class="tab">' + item.Title + '</span></a></li>');
+                    }
+                });
+            },
+            error: function (error) {
+                alert("ERROR: " + data);
+            }
+        });
+
+        
+
+                        
+     </script>
+
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:_dlc_DocId msdt:dt="string">PDZCV2VKSE7H-10-11</mso:_dlc_DocId>
+<mso:_dlc_DocIdItemGuid msdt:dt="string">8d5a28eb-aab9-4a63-8dcd-18237a5688e9</mso:_dlc_DocIdItemGuid>
+<mso:_dlc_DocIdUrl msdt:dt="string">https://intranet.ent.southcom.mil/sites/j3-integratedops/b2c2wg/_layouts/DocIdRedir.aspx?ID=PDZCV2VKSE7H-10-11, PDZCV2VKSE7H-10-11</mso:_dlc_DocIdUrl>
+<mso:Document_x0020_Bucket msdt:dt="string">1000 - Information Technology (IT) Procurement, Planning,  Operations, and Management</mso:Document_x0020_Bucket>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+<body>
+<div id="tab-menu" style="text-transform:uppercase;">
+    <ul class="nav nav-tabs">
+        <li class="active" role="presentation"><a href="#">B2C2WG HOMEPAGE<span class="sr-only">(current)</span></a></li>
+        <li class="dropdown" id="boards-sub-menu">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">BOARDS<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+             <!-- JS dynamic data --> 
+            </ul>
+        </li>
+        <li class="dropdown" id="center-sub-menu">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">CENTERS<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <!-- JS dynamic data --> 
+            </ul>
+        </li>
+        <li class="dropdown" id="cells-sub-menu">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">CELLS<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <!-- JS dynamic data --> 
+            </ul>
+        </li>
+        <li class="dropdown" id="wg-sub-menu">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">WORKING GROUP<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <!-- JS dynamic data --> 
+            </ul>
+        </li>
+        <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">TOOLS<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                <li><a href="https://intranet.ent.southcom.mil/sites/j3-integratedops/b2c2wg/Lists/7%20Minute%20Drills/AllItems.aspx" target="_blank"><span class="glyphicon glyphicon-th-list"></span> 7 MINUTE DRILL</a></li>
+                <li><a href="https://www.intelink.gov/my.policy" target="_blank"><span class="glyphicon glyphicon-lock"></span> INTELLINK</a></li>
+                <li><a href="https://intellipedia.intelink.gov/wiki/" target="_blank"><span class="glyphicon glyphicon-book"></span> INTELLIPEDIA</a></li>
+                <li><a href="https://conference.apps.mil/" target="_blank"><span class="glyphicon glyphicon-blackboard"></span> DCS</a></li>
+                <li><a href="https://intranet.ent.southcom.mil/sites/j3/KB/default.aspx" target="_blank"><span class="glyphicon glyphicon-question-sign"></span> HOW-TO</a></li>
+                <li><a href="https://intranet.ent.southcom.mil/sites/FDMS/SOUTHCOM%20FDMS/default.aspx" target="_blank"><span class="glyphicon glyphicon-ok"></span> FDMS</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+</body>
+</html>

@@ -1,6 +1,6 @@
 <?php
 /*
- load small JSON files and loads them as a fake JSON API for testing
+ load small JSON files to fake JSON API for testing
 */
 header("Access-Control-Allow-Origin: *");
 header('Content-Type: application/json');

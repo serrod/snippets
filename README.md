@@ -1,6 +1,5 @@
 # snippets
-Randon Code that Makes My Life Easier.
-
-Over the years, I have developed all sorts of code to sort, parse, automate, and so on. Unfortunately, I never kept a single point repo to track it or archive it. Instead, it was left scattered all over the place. So, let's try keeping it in GitHub. Who knows, it might be useful to someone else. 
+Randon Code
+Over the years, I have developed all sorts of code to sort, parse, automate, and so on. Unfortunately, I never kept a single point repo to track it or archive my code. Instead, it was left scattered all over the place. Let's avoid that going forward. 
 
 -SFR
